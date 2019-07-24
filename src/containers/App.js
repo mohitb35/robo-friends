@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CardList from './CardList';
-import SearchBox from './SearchBox';
-import Scroll from './Scroll';
+import CardList from '../components/CardList';
+import SearchBox from '../components/SearchBox';
+import Scroll from '../components/Scroll';
 // import { robots } from './robots';
 import './App.css'
 
@@ -31,13 +31,17 @@ class App extends Component {
 
 	//Render seems to reflect state changes.
 	render() {
-		const filteredRobots = this.state.robots.filter(robot => {
-			return robot.name.toLowerCase().includes(this.state.searchfield.toLowerCase());
+		const { robots, searchfield } = this.state;
+
+		const filteredRobots = robots.filter(robot => {
+			return robot.name.toLowerCase().includes(searchfield.toLowerCase());
 		})
 
-		if (this.state.robots.length === 0){
+		if (robots.length === 0){
 			return (
-				<h1>Loading</h1>
+				<div className="flex items-center justify-center vh-100">
+					<h1 className="tc">Loading</h1>
+				</div>
 			);
 		} else {
 			return (

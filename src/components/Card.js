@@ -1,5 +1,4 @@
 import React from 'react';
-import './Card.css';
 
 //You can also accept props instead of destructured params as below, and either refer to props directly (e.g. props.name) or destructure props within the function
 

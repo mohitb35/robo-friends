@@ -13,6 +13,10 @@ import Card from './Card';
 } */
 
 const CardList = ({ robots }) => {
+	/* if(true){
+		throw new Error("Oh my God!");
+	} */
+	//Throwing error to test out Error Boundary
 	return (
 		<div>
 			{
